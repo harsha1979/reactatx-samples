@@ -8,6 +8,10 @@ import Unauthorize from "./pages/Unauthorize";
 function App() {
   const router = createBrowserRouter([
     {
+      path: "/",
+      element: <Home />,
+    },
+    {
       path: "/home",
       element: <Home />,
     },

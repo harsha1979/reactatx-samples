@@ -40,3 +40,58 @@
 .read-the-docs {
   color: #888;
 }
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1em;
+  margin-top: 2em;
+  color: green;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1em;
+  margin-top: 2em;
+  color: blue;
+}
+
+.unauthorize {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+  margin-top: 2em;
+  color: red;
+}
+
+.button {
+  background-color: #abc24f; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slightly raises the button */
+}
+
+.button:active {
+  background-color: #3e8e41; /* Even darker green on click */
+  transform: translateY(0); /* Resets the button position */
+}
+
+.button:disabled {
+  background-color: #ddd; /* Disabled button */
+  color: #666;
+  cursor: not-allowed;
+}

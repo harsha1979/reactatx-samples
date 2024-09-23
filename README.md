@@ -1,4 +1,4 @@
-# reactatx-samples
+# React Sample Code
 ReactATX Meetup Sample Applications
 
 Asgardeo Auth React SDK

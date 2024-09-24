@@ -4,15 +4,7 @@ import capitalFac from "../assets/cap.png";
 import asgardeo from "../assets/asgardeo.png";
 import "../App.css";
 
-import { useNavigate } from "react-router-dom";
-
 function Dashboard() {
-  const navigate = useNavigate();
-
-  const navgateToHome = () => {
-    navigate("/home");
-  };
-
   return (
     <div className="dashboard">
       <div>
@@ -34,17 +26,11 @@ function Dashboard() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <h1>Dashboard</h1>
+      <h1>User Dashboard</h1>
       <div className="card">
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <input
-          type="button"
-          value="Home >>"
-          className="button"
-          onClick={navgateToHome}
-        />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

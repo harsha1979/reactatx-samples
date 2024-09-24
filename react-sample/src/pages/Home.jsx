@@ -33,7 +33,7 @@ function Home() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <h1>Home</h1>
+      <h1>Home Page</h1>
       <div className="card">
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR

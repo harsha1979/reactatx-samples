@@ -7,7 +7,8 @@ https://www.npmjs.com/package/@asgardeo/auth-react
 # Lets start
 
 #### Open the project
-Open the project folder under using your familar editor and open a terminal from either inside the editor or external
+Open the project folder using your familar editor and open a terminal from either inside the editor or external terminal
+
 reactatx-samples/react-sample
 
 #### Run this commands in terminal from reactatx-samples/react-sample location

@@ -4,12 +4,19 @@ ReactATX Meetup Sample Applications
 Asgardeo Auth React SDK
 https://www.npmjs.com/package/@asgardeo/auth-react
 
-## Lets start
-Open using an editor
+# Lets start
+
+#### Open the project
+Open the project folder under using your familar editor and open a terminal from either inside the editor or external
+reactatx-samples/react-sample
+
+#### Run this commands in terminal from reactatx-samples/react-sample location
 ```
 npm install 
 npm run dev
 ```
+
+#### Root Access URL
 http://localhost:5173/
 
 #### Register account in Asgardeo 

@@ -31,18 +31,18 @@ reactatx-samples/react-sample/src/pages/main.jsx and modify accordingly
 Main.jsx
 --------
 
-#const config = {
-#  signInRedirectURL: "https://localhost:3000/sign-in",
-#  signOutRedirectURL: "https://localhost:3000/dashboard",
-#  clientID: "<client_ID>",
-#  baseUrl: "https://api.asgardeo.io/t/<org_name>",
-#  scope: ["openid", "profile"],
-#};
+###const config = {
+###  signInRedirectURL: "https://localhost:3000/sign-in",
+###  signOutRedirectURL: "https://localhost:3000/dashboard",
+###  clientID: "<client_ID>",
+###  baseUrl: "https://api.asgardeo.io/t/<org_name>",
+###  scope: ["openid", "profile"],
+###};
 
 <StrictMode>
-#   <AuthProvider config={config}>
+###   <AuthProvider config={config}>
      <App />
-#   </AuthProvider>
+###   </AuthProvider>
  </StrictMode>
 
 

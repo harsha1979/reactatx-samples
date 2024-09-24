@@ -33,7 +33,7 @@ https://www.npmjs.com/package/@asgardeo/auth-react
 
 Go inside this sample prject (main branch) in below folder reactatx-samples/react-sample/src/pages/main.jsx and modify accordingly
 
-#### Install react SDK from npm registry.
+#### Install React SDK from npm registry.
 
 ```
 npm install @asgardeo/auth-react --save

@@ -4,7 +4,8 @@ ReactATX Meetup Sample Applications
 Asgardeo Auth React SDK
 https://www.npmjs.com/package/@asgardeo/auth-react
 
-# Lets start
+# Let's start
+--------------
 
 #### Open the project
 Open the project folder using your familar editor and open a terminal from either inside the editor or external terminal
@@ -16,15 +17,20 @@ reactatx-samples/react-sample
 npm install 
 npm run dev
 ```
-
 #### Root Access URL
 http://localhost:5173/
+
+## Setting up in Asgardeo (Identity Provider Side)
 
 #### Register account in Asgardeo 
 https://asgardeo.io/signup?utm_source=console
 
 #### Register React SPA application
 https://wso2.com/asgardeo/docs/get-started/try-samples/qsg-spa-react/
+
+#### Create Another User 
+https://wso2.com/asgardeo/docs/guides/users/manage-users/
+
 ```
 Redirect URL = http://localhost:5173/
 ```

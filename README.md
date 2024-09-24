@@ -22,20 +22,20 @@ Go inside this sample prject (main branch) in below folder reactatx-samples/reac
 ### Main.jsx
 --------
 ```
-#### const config = {
+const config = {
 
-#### signInRedirectURL: "https://localhost:3000/sign-in",
-#### signOutRedirectURL: "https://localhost:3000/dashboard",
-#### clientID: "<client_ID>",
-#### baseUrl: "https://api.asgardeo.io/t/<org_name>",
-#### scope: ["openid", "profile"],
-#### };
+signInRedirectURL: "https://localhost:3000/sign-in",
+signOutRedirectURL: "https://localhost:3000/dashboard",
+clientID: "<client_ID>",
+baseUrl: "https://api.asgardeo.io/t/<org_name>",
+scope: ["openid", "profile"],
+};
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-####    <AuthProvider config={config}>
+    <AuthProvider config={config}>
       <App />
-####    </AuthProvider>
+    </AuthProvider>
   </StrictMode>
 );
 ```

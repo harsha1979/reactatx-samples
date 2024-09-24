@@ -3,28 +3,28 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Unauthorize from "./pages/Unauthorize";
+import Error from "./pages/Error";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/error",
+    element: <Error />,
+  },
+]);
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/home",
-      element: <Home />,
-    },
-    {
-      path: "/dashboard",
-      element: <Dashboard />,
-    },
-    {
-      path: "/unauthorize",
-      element: <Unauthorize />,
-    },
-  ]);
-
   return <RouterProvider router={router} />;
 }
 

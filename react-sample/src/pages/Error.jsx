@@ -2,7 +2,7 @@ import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "../App.css";
 
-function Unauthorize() {
+function Error() {
   return (
     <div className="unauthorize">
       <div>
@@ -27,4 +27,4 @@ function Unauthorize() {
   );
 }
 
-export default Unauthorize;
+export default Error;

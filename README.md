@@ -33,9 +33,10 @@ Redirect URL = http://localhost:5173/
 ```
 #### Create Another User 
 https://wso2.com/asgardeo/docs/guides/users/manage-users/
-Ex:
+```
 harshaasgardeo@wso2.com
 ReactATX_2024
+```
 
 ## Setting and Implementing in the React Application Side
 

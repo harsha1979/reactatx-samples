@@ -24,8 +24,10 @@ http://localhost:5173/
 https://asgardeo.io/signup?utm_source=console
 
 #### Register React SPA application
-Redirect URL http://localhost:5173/
-
+https://wso2.com/asgardeo/docs/get-started/try-samples/qsg-spa-react/
+```
+Redirect URL = http://localhost:5173/
+```
 #### Go through the Asgardeo React SDK 
 https://www.npmjs.com/package/@asgardeo/auth-react
 

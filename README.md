@@ -22,7 +22,7 @@ http://localhost:5173/
 
 ## Setting up in Asgardeo (Identity Provider Side)
 
-#### Register account in Asgardeo 
+#### Register account and oragnization in Asgardeo 
 https://asgardeo.io/signup?utm_source=console
 
 #### Register React SPA application
@@ -31,9 +31,11 @@ Use this redirect URL when create the application
 ```
 Redirect URL = http://localhost:5173/
 ```
-
 #### Create Another User 
 https://wso2.com/asgardeo/docs/guides/users/manage-users/
+Ex:
+harshaasgardeo@wso2.com
+ReactATX_2024
 
 ## Setting and Implementing in the React Application Side
 

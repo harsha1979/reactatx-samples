@@ -27,13 +27,16 @@ https://asgardeo.io/signup?utm_source=console
 
 #### Register React SPA application
 https://wso2.com/asgardeo/docs/get-started/try-samples/qsg-spa-react/
+Use this redirect URL when create the application
+```
+Redirect URL = http://localhost:5173/
+```
 
 #### Create Another User 
 https://wso2.com/asgardeo/docs/guides/users/manage-users/
 
-```
-Redirect URL = http://localhost:5173/
-```
+## Setting and Implementing in the React Application Side
+
 #### Go through the Asgardeo React SDK 
 https://www.npmjs.com/package/@asgardeo/auth-react
 

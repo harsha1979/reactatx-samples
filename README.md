@@ -175,6 +175,7 @@ function Home() {
       </div>
       <h1>Vite + React</h1>
       <h1>Home Page</h1>
+      <h2>Authenticated : {String(state?.isAuthenticated)}</h2>
       <div className="card">
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
@@ -302,7 +303,8 @@ useEffect(() => {
   }, [getDecodedIDToken, state]);
 
 -----
-<h2>Username : {name}</h2>
+<h2>Username : {state?.username}</h2>
+<h2>Authenticated : {String(state?.isAuthenticated)}</h2>
 <h2>Roles : {Array(roles).join()}</h2>
 
 ```

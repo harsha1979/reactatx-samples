@@ -54,6 +54,8 @@ npm install @asgardeo/auth-react --save
 
 ### Main.jsx
 --------
+To update the existing code and wrap the root App component with the AuthProvider component from the React SDK, you can follow these steps. This ensures that all child components within the App component have access to the authContext provided by AuthProvider.
+
 ```
 const config = {
 
@@ -71,4 +73,20 @@ createRoot(document.getElementById("root")).render(
     </AuthProvider>
   </StrictMode>
 );
+```
+
+
+### App.jsx
+--------
+To secure the /dashboard route using a SecureApp component, you can wrap that specific route within your routing configuration as in the below. When a user directly accesses /dashboard, they will be automatically redirected to the Identity Provider's login screen, which is configured with the AuthProvider at the root level.
+
+```
+{
+    path: "/dashboard",
+    element: (
+      <SecureApp>
+        <Dashboard />
+      </SecureApp>
+    ),
+  }
 ```

@@ -60,12 +60,11 @@ To update the existing code and wrap the root App component with the AuthProvide
 import { AuthProvider } from "@asgardeo/auth-react";
 
 const config = {
-
-signInRedirectURL: "https://localhost:3000/sign-in",
-signOutRedirectURL: "https://localhost:3000/dashboard",
-clientID: "<client_ID>",
-baseUrl: "https://api.asgardeo.io/t/<org_name>",
-scope: ["openid", "profile"],
+  signInRedirectURL: "http://localhost:5173/",
+  signOutRedirectURL: "http://localhost:5173/",
+  clientID: "63jnmnPytGXmHLOqxJ6oNCMNmbka",
+  baseUrl: "https://api.asgardeo.io/t/reactatx",
+  scope: ["openid", "profile"],
 };
 
 createRoot(document.getElementById("root")).render(

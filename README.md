@@ -57,6 +57,8 @@ npm install @asgardeo/auth-react --save
 To update the existing code and wrap the root App component with the AuthProvider component from the React SDK, you can follow these steps. This ensures that all child components within the App component have access to the authContext provided by AuthProvider.
 
 ```
+import { AuthProvider } from "@asgardeo/auth-react";
+
 const config = {
 
 signInRedirectURL: "https://localhost:3000/sign-in",
@@ -81,6 +83,8 @@ createRoot(document.getElementById("root")).render(
 To secure the /dashboard route using a SecureApp component, you can wrap that specific route within your routing configuration as in the below. When a user directly accesses /dashboard, they will be automatically redirected to the Identity Provider's login screen, which is configured with the AuthProvider at the root level.
 
 ```
+import { SecureApp } from "@asgardeo/auth-react";
+
 {
     path: "/dashboard",
     element: (
@@ -89,4 +93,78 @@ To secure the /dashboard route using a SecureApp component, you can wrap that sp
       </SecureApp>
     ),
   }
+```
+
+### Home.jsx
+--------
+Add a "SignIn" button to the homepage that enables users to initiate the login process by clicking it. This button will redirect users to the Identity Provider for authentication. After authentication, users will be redirected back to the original context, with "http://localhost:5173/" set as the redirect URL in the Identity Provider. 
+
+You can then register a callback function to the useAuthContext hook using the 'on' function, as shown in the code below. This setup will automatically invoke the navigate function, redirecting the user to the dashboard.
+
+
+```
+import reactLogo from "../assets/react.svg";
+import viteLogo from "/vite.svg";
+import capitalFac from "../assets/cap.png";
+import asgardeo from "../assets/asgardeo.png";
+import "../App.css";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext, Hooks } from "@asgardeo/auth-react";
+import { useEffect } from "react";
+
+function Home() {
+  const navigate = useNavigate();
+  const { on, state, signIn } = useAuthContext();
+
+  useEffect(() => {
+    on(Hooks.SignIn, () => {
+      navigate("/dashboard");
+    });
+  }, [on]);
+
+  return (
+    <div className="home">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://www.capitalfactory.com/" target="_blank">
+          <img
+            src={capitalFac}
+            className="logo react"
+            alt="Capital Factory logo"
+          />
+        </a>
+        <a href="https://wso2.com/asgardeo/" target="_blank">
+          <img src={asgardeo} className="logo react" alt="WSO2 logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <h1>Home Page</h1>
+      <div className="card">
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+        <input
+          type="button"
+          value="SingIn >>"
+          className="button"
+          onClick={() => {
+            signIn();
+          }}
+        />
+      </div>
+
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </div>
+  );
+}
+
+export default Home;
+
 ```

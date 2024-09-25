@@ -57,6 +57,10 @@ npm install @asgardeo/auth-react --save
 To update the existing code and wrap the root App component with the AuthProvider component from the React SDK, you can follow these steps. This ensures that all child components within the App component have access to the authContext provided by AuthProvider.
 
 ```
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
 import { AuthProvider } from "@asgardeo/auth-react";
 
 const config = {
@@ -74,6 +78,7 @@ createRoot(document.getElementById("root")).render(
     </AuthProvider>
   </StrictMode>
 );
+
 ```
 
 
@@ -82,16 +87,43 @@ createRoot(document.getElementById("root")).render(
 To secure the /dashboard route using a SecureApp component, you can wrap that specific route within your routing configuration as in the below. When a user directly accesses /dashboard, they will be automatically redirected to the Identity Provider's login screen, which is configured with the AuthProvider at the root level.
 
 ```
+import "./App.css";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Error from "./pages/Error";
 import { SecureApp } from "@asgardeo/auth-react";
 
-{
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+  {
     path: "/dashboard",
     element: (
       <SecureApp>
         <Dashboard />
       </SecureApp>
     ),
-  }
+  },
+  {
+    path: "/error",
+    element: <Error />,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
 ```
 
 ### Home.jsx

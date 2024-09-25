@@ -153,6 +153,10 @@ function Home() {
     });
   }, [on]);
 
+  if (state.isLoading) {
+    return <div className="home">Loading</div>;
+  }
+
   return (
     <div className="home">
       <div>

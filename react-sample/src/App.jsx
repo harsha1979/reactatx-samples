@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./pages/Error";
+import { SecureApp } from "@asgardeo/auth-react";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <SecureApp>
+        <Dashboard />
+      </SecureApp>
+    ),
   },
   {
     path: "/error",

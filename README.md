@@ -309,10 +309,75 @@ useEffect(() => {
 
 ### Dashboard.jsx
 
+To call RestAPI from this component, we can use httpRequest that was wrapped by the SDK. 
+When we config the httpRequest, we can enable either the access token should be add to the header or not.
+To access exernal resources, we need to add this URL to the resourceServerURLs in AuthProvider config as in the below main.jsx
+
+
+```
 const { state, signOut, getDecodedIDToken, httpRequest } = useAuthContext();
 const [resource, setResource] = useState("");
 
+--------------
+
+const dataRetrieve = () => {
+    const reqConfig = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "GET",
+      url: "https://jsonplaceholder.typicode.com/todos/1",
+      attachToken: false,
+    };
+
+    httpRequest(reqConfig)
+      .then((response) => {
+        console.log("Data retrieved successfully", response);
+        setResource(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.error("Error while getting the data", error);
+      });
+  };
+
+--------------
+
+<div className="card">
+    <input
+      type="button"
+      value="Access Resource"
+      className="button"
+      onClick={dataRetrieve}
+    />
+  </div>
+<div>{resource}</div>
 
 
+```
+
+### main.jsx
+
+Add resoruce URLs to the list. 
+
+We can configure which storage that we can use with the ReactSDK. 
+
+sessionStorage
+localStorage
+webWorker
+
+```
+
+const config = {
+  signInRedirectURL: "http://localhost:5173/",
+  signOutRedirectURL: "http://localhost:5173/",
+  clientID: "63jnmnPytGXmHLOqxJ6oNCMNmbka",
+  baseUrl: "https://api.asgardeo.io/t/reactatx",
+  scope: ["openid", "profile"],
+  resourceServerURLs: ["https://jsonplaceholder.typicode.com"],
+  storage: "webWorker",
+};
+
+```
 
 

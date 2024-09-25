@@ -38,12 +38,12 @@ function Home() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <input
+        {/*<input
           type="button"
           value="Dashboard >>"
           className="button"
           onClick={navgateToDashboard}
-        />
+        />*/}
       </div>
 
       <p className="read-the-docs">

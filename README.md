@@ -66,7 +66,7 @@ import { AuthProvider } from "@asgardeo/auth-react";
 const config = {
   signInRedirectURL: "http://localhost:5173/",
   signOutRedirectURL: "http://localhost:5173/",
-  clientID: "63jnmnPytGXmHLOqxJ6oNCMNmbka",
+  clientID: "63jnmnPytGXmHLOqxJ6oNCMNmbka_",
   baseUrl: "https://api.asgardeo.io/t/reactatx",
   scope: ["openid", "profile"],
 };

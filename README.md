@@ -281,6 +281,7 @@ In your React application, you can then access this ID Token by calling the getD
 #### Note that the following code should not be replaced your existing Dashboard.jsx directly; you will need to integrate it appropriately by examining your current code structure.
 
 ```
+import { useEffect } from "react";
 import { useState } from "react";
 
 ----
@@ -305,6 +306,13 @@ useEffect(() => {
 <h2>Roles : {Array(roles).join()}</h2>
 
 ```
+
+### Dashboard.jsx
+
+const { state, signOut, getDecodedIDToken, httpRequest } = useAuthContext();
+const [resource, setResource] = useState("");
+
+
 
 
 

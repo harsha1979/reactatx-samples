@@ -263,3 +263,39 @@ function Dashboard() {
 export default Dashboard;
 
 ```
+
+### Dashboard.jsx
+
+To read user attributes such as username and roles in your React application, first ensure that roles are established on the Identity Provider side. Using Asgardeo, you would start by creating a group and a role, then assign the role to the group and the group to the user. As the 'roles' attribute needs to be included in the openid or profile scopes, make sure to add it to one of these scopes to retrieve it with the ID Token response. 
+In your React application, you can then access this ID Token by calling the getDecodedIDToken function from authContext. 
+
+#### Note that the following code should not be replaced your existing Dashboard.jsx directly; you will need to integrate it appropriately by examining your current code structure.
+
+```
+import { useState } from "react";
+
+----
+const [name, setName] = useState("Unknown");
+const [roles, setRoles] = useState("Unknown");
+const { state, signOut, getDecodedIDToken } = useAuthContext();
+
+-----
+useEffect(() => {
+    getDecodedIDToken()
+      .then((token) => {
+        setName(token?.username);
+        setRoles(token?.roles);
+      })
+      .catch((error) => {
+        console.error("Error while getting the decoded ID token", error);
+      });
+  }, [getDecodedIDToken, state]);
+
+-----
+<h2>Username : {name}</h2>
+<h2>Roles : {Array(roles).join()}</h2>
+
+```
+
+
+

@@ -22,7 +22,7 @@ http://localhost:5173/
 
 ## Setting up in Asgardeo (Identity Provider Side)
 
-#### Register account and oragnization in Asgardeo 
+#### Register account and oragnization in Asgardeo or download opensource version of the IAM in WSO2.
 https://asgardeo.io/signup?utm_source=console
 
 #### Register React SPA application

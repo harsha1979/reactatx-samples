@@ -7,9 +7,9 @@ import { AuthProvider } from "@asgardeo/auth-react";
 const config = {
   signInRedirectURL: "http://localhost:5173/",
   signOutRedirectURL: "http://localhost:5173/",
-  clientID: "63jnmnPytGXmHLOqxJ6oNCMNmbka",
-  baseUrl: "https://api.asgardeo.io/t/reactatx",
-  scope: ["openid", "profile"],
+  clientID: "xci1fLxZpHWUTRDZePfwG4ZK_4Ia",
+  baseUrl: "https://api.asgardeo.io/t/harshareactdemo",
+  scope: ["openid", "profile", "groups"],
   resourceServerURLs: ["https://jsonplaceholder.typicode.com"],
   storage: "webWorker",
 };

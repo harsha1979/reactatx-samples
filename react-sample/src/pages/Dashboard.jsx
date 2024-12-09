@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function Dashboard() {
   const [name, setName] = useState("Unknown");
-  const [roles, setRoles] = useState("Unknown");
+  const [groups, setGroups] = useState("Unknown");
   const { state, signOut, getDecodedIDToken, httpRequest } = useAuthContext();
   const [resource, setResource] = useState("");
 
@@ -17,7 +17,7 @@ function Dashboard() {
     getDecodedIDToken()
       .then((token) => {
         setName(token?.username);
-        setRoles(token?.roles);
+        setGroups(token?.groups);
       })
       .catch((error) => {
         console.error("Error while getting the decoded ID token", error);
@@ -74,7 +74,7 @@ function Dashboard() {
         <h1>User Dashboard</h1>
         <h2>Username : {state?.username}</h2>
         <h2>Authenticated : {String(state?.isAuthenticated)}</h2>
-        <h2>Roles : {Array(roles).join()}</h2>
+        <h2>Roles : {Array(groups).join()}</h2>
         <input
           type="button"
           value="Logout >>"

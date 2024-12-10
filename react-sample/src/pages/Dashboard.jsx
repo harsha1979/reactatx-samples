@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 function Dashboard() {
+  const [email, setEmail] = useState("Unknown");
   const [name, setName] = useState("Unknown");
   const [groups, setGroups] = useState("Unknown");
   const { state, signOut, getDecodedIDToken, httpRequest } = useAuthContext();
@@ -18,6 +19,7 @@ function Dashboard() {
       .then((token) => {
         setName(token?.username);
         setGroups(token?.groups);
+        setEmail(token?.email);
       })
       .catch((error) => {
         console.error("Error while getting the decoded ID token", error);
@@ -32,7 +34,7 @@ function Dashboard() {
       },
       method: "GET",
       url: "https://jsonplaceholder.typicode.com/todos/1",
-      attachToken: false,
+      attachToken: true,
     };
 
     httpRequest(reqConfig)
@@ -73,6 +75,7 @@ function Dashboard() {
         </p>
         <h1>User Dashboard</h1>
         <h2>Username : {state?.username}</h2>
+        <h2>Email : {state?.email}</h2>
         <h2>Authenticated : {String(state?.isAuthenticated)}</h2>
         <h2>Roles : {Array(groups).join()}</h2>
         <input
@@ -95,7 +98,8 @@ function Dashboard() {
           onClick={dataRetrieve}
         />
       </div>
-      <div>{resource}</div>
+
+      <h2>API Response : {resource} </h2>
     </div>
   );
 }

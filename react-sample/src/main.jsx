@@ -10,10 +10,10 @@ const config = {
   clientID: "xci1fLxZpHWUTRDZePfwG4ZK_4Ia",
   baseUrl: "https://api.asgardeo.io/t/harshareactdemo",
   scope: ["openid", "profile", "groups", "email"],
-  resourceServerURLs: ["https://jsonplaceholder.typicode.com"],
   storage: "webWorker",
 };
 //# sessionStorage   localStorage  webWorker
+//resourceServerURLs: ["https://jsonplaceholder.typicode.com"],
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

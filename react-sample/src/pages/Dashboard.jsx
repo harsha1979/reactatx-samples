@@ -10,6 +10,7 @@ import { useState } from "react";
 function Dashboard() {
   const [email, setEmail] = useState("Unknown");
   const [name, setName] = useState("Unknown");
+  const [givenname, setGivenName] = useState("Unknown");
   const [groups, setGroups] = useState("Unknown");
   const { state, signOut, getDecodedIDToken, httpRequest } = useAuthContext();
   const [resource, setResource] = useState("");
@@ -18,6 +19,7 @@ function Dashboard() {
     getDecodedIDToken()
       .then((token) => {
         setName(token?.username);
+        setGivenName(token?.given_name);
         setGroups(token?.groups);
         setEmail(token?.email);
       })
@@ -34,7 +36,7 @@ function Dashboard() {
       },
       method: "GET",
       url: "https://jsonplaceholder.typicode.com/todos/1",
-      attachToken: true,
+      attachToken: false,
     };
 
     httpRequest(reqConfig)
@@ -74,8 +76,8 @@ function Dashboard() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
         <h1>User Dashboard</h1>
-        <h2>Username : {state?.username}</h2>
-        <h2>Email : {state?.email}</h2>
+        <h2>Name : {givenname}</h2>
+        <h2>Email : {email}</h2>
         <h2>Authenticated : {String(state?.isAuthenticated)}</h2>
         <h2>Roles : {Array(groups).join()}</h2>
         <input

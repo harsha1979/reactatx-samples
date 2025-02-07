@@ -1,3 +1,7 @@
+#About me
+https://www.linkedin.com/in/harshathirimanna/
+
+
 # React Sample Code
 ReactATX Meetup Sample Applications
 
